@@ -1,0 +1,54 @@
+name: Update location
+
+on:
+  workflow_dispatch:
+    inputs:
+      current:
+        description: '現在地を選択してください'
+        required: true
+        type: choice
+        options:
+          - A大学
+          - B大学
+          - 在宅
+          - 出張
+          - 休暇
+
+permissions:
+  contents: write
+
+jobs:
+  update-location:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update status.json
+        env:
+          CURRENT: ${{ github.event.inputs.current }}
+        run: |
+          python <<'PY'
+          import json
+          from datetime import datetime, timezone, timedelta
+          from pathlib import Path
+
+          path = Path('status.json')
+          data = json.loads(path.read_text(encoding='utf-8'))
+
+          current = "${{ github.event.inputs.current }}"
+          data['current'] = current
+
+          jst = timezone(timedelta(hours=9))
+          data['updatedAt'] = datetime.now(jst).isoformat(timespec='seconds')
+
+          path.write_text(
+              json.dumps(data, ensure_ascii=False, indent=2) + '\n',
+              encoding='utf-8'
+          )
+          PY
+
+      - name: Commit and push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'Update current location'
