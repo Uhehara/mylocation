@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Location</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h1>MY LOCATION</h1>
+      <p id="location" class="location">読み込み中...</p>
+
+      <h2>Schedule</h2>
+      <div id="schedule" class="schedule">読み込み中...</div>
+
+      <p id="last-update" class="last-update">last update: 読み込み中...</p>
+    </section>
+
+    <footer class="footer">
+      <p>
+        編集用:
+        <a
+          href="https://github.com/uhehara/mylocation"
+          target="_blank"
+          rel="noopener noreferrer"
+        >GitHub repository</a>
+      </p>
+      <p class="note">location.txt と schedule.txt を編集すると表示が更新されます。</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
