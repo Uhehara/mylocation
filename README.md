@@ -1,2 +1,0 @@
-# mylocation
-Showing my location.
