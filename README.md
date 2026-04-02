@@ -1,9 +1,8 @@
 # mylocation
-
 GitHub Pages で公開するシンプルな居場所表示ページです。
+ChatGTP plusで作成
 
 ## ファイル構成
-
 - `index.html` : ページ本体
 - `style.css` : 見た目
 - `app.js` : `location.txt` と `schedule.txt` を読み込んで表示
