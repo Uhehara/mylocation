@@ -1,4 +1,2 @@
-0421 SciTokyo
-0422 UTokyo
-0423 SciTokyo
-0424 Rest
+0507 SciTokyo
+0508 SciTokyo
