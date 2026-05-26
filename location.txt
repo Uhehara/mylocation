@@ -1,5 +1,3 @@
-0515 UTokyo
-0516 UTokyo
-0517 UTokyo
-0518 UTokyo
-(incubation experiment)
+0526 UTokyo
+0527 Rest
+0528 SciTokyo
